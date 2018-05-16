@@ -35,15 +35,7 @@ public class Character : MonoBehaviour {
     public GameObject weapon;
     public GameObject armorObject;
     */
-
-    private static bool created = false;
     
-    void Awake() {
-        if(!created) {
-            DontDestroyOnLoad(this.gameObject);
-            created = true;
-        }
-    }
 
 	// Use this for initialization
 	void Start () {

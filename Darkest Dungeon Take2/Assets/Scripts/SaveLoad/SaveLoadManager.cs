@@ -6,12 +6,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
 public static class SaveLoadManager {
-
+    
 	public static void SavePlayer(Character[] player, int saveslot) {
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream stream = new FileStream (Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav", FileMode.Create);
 
-		PlayerData data = new PlayerData (player);
+		PlayerData data = new PlayerData(player);
 
 		bf.Serialize (stream, data);
 		stream.Close ();
@@ -44,16 +44,21 @@ public static class SaveLoadManager {
 			PlayerData data = bf.Deserialize (stream) as PlayerData;
 
 			stream.Close ();
-			if (position == 0)
-				return data.stats0;
-			if (position == 1)
-				return data.stats1;
-			if (position == 2)
-				return data.stats2;
-			if (position == 3)
-				return data.stats3;
-			else
-				return new float[6];
+            float[] stats = new float[10];
+            for (int i = 0; i < stats.Length; i++) {
+                if (position == 0)
+                    stats[i] = data.stats[0, i];
+                if (position == 1)
+                    stats[i] = data.stats[1, i];
+                if (position == 2)
+                    stats[i] = data.stats[2, i];
+                if (position == 3)
+                    stats[i] = data.stats[3, i];
+            }
+            if (position < 4)
+                return stats;
+            else
+                return new float[10];
 			
 		} else {
 			Debug.LogError ("File not found");
@@ -115,59 +120,22 @@ public class GameProgress {
 
 [Serializable]
 public class PlayerData {
-	public float[] stats0;
-	public float[] stats1;
-	public float[] stats2;
-	public float[] stats3;
-
+    public float[,] stats;
 	public PlayerData(Character[] player) {
-		stats0 = new float[10];
-		stats0 [0] = player [0].health;
-		stats0 [1] = player [0].damage;
-		stats0 [2] = player [0].dodge;
-		stats0 [3] = player [0].initiative;
-		stats0 [4] = player [0].playerIndex;
-		stats0 [5] = player [0].position;
-		stats0 [6] = player [0].hitChance;
-		stats0 [7] = player [0].blightRes;
-		stats0 [8] = player [0].stunRes;
-		stats0 [9] = player [0].bleedRes;
-
-		stats1 = new float[10];
-		stats1 [0] = player [1].health;
-		stats1 [1] = player [1].damage;
-		stats1 [2] = player [1].dodge;
-		stats1 [3] = player [1].initiative;
-		stats1 [4] = player [1].playerIndex;
-		stats1 [5] = player [1].position;
-		stats1 [6] = player [1].hitChance;
-		stats1 [7] = player [1].blightRes;
-		stats1 [8] = player [1].stunRes;
-		stats1 [9] = player [1].bleedRes;
-
-		stats2 = new float[10];
-		stats2 [0] = player [2].health;
-		stats2 [1] = player [2].damage;
-		stats2 [2] = player [2].dodge;
-		stats2 [3] = player [2].initiative;
-		stats2 [4] = player [2].playerIndex;
-		stats2 [5] = player [2].position;
-		stats2 [6] = player [2].hitChance;
-		stats2 [7] = player [2].blightRes;
-		stats2 [8] = player [2].stunRes;
-		stats2 [9] = player [2].bleedRes;
-
-		stats3 = new float[10];
-		stats3 [0] = player [3].health;
-		stats3 [1] = player [3].damage;
-		stats3 [2] = player [3].dodge;
-		stats3 [3] = player [3].initiative;
-		stats3 [4] = player [3].playerIndex;
-		stats3 [5] = player [3].position;
-		stats3 [6] = player [3].hitChance;
-		stats3 [7] = player [3].blightRes;
-		stats3 [8] = player [3].stunRes;
-		stats3 [9] = player [3].bleedRes;
+        stats = new float [4,10];
+        for (int i = 0; i < 4; i++) {
+            stats[i,0] = player[i].health;
+            stats[i,1] = player[i].damage;
+            stats[i,2] = player[i].dodge;
+            stats[i,3] = player[i].initiative;
+            stats[i,4] = player[i].playerIndex;
+            stats[i,5] = player[i].position;
+            stats[i,6] = player[i].hitChance;
+            stats[i,7] = player[i].blightRes;
+            stats[i,8] = player[i].stunRes;
+            stats[i,9] = player[i].bleedRes;
+        }
+		
 	}
 }
 

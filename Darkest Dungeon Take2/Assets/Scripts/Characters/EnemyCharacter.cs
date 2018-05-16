@@ -15,7 +15,6 @@ public class EnemyCharacter : MonoBehaviour {
 
     public GameObject border;
 
-    [Header("Character Stats")]
     public int      health = 100;
     public int      damage = 0;
     public float    hitChance = 0;
@@ -27,11 +26,8 @@ public class EnemyCharacter : MonoBehaviour {
 
     bool XPgained = false;
 
-    /*
-    [Header("Equipped Items")]
     public GameObject weapon;
     public GameObject armor;
-    */
 
     public PopUpThings popUpThings;
     public DungeonManager dungeonManager;

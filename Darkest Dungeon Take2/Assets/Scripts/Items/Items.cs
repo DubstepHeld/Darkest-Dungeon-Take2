@@ -45,4 +45,12 @@ public class Items : MonoBehaviour {
 			itemName += glyphs[Random.Range(0, glyphs.Length)];
         }
     }
+
+    void Start() {
+		
+    }
+
+    void Update() {
+
+    }
 }

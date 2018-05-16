@@ -14,7 +14,7 @@ public class unimportant : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time - startTime > 0.01f)
+        if (Time.time - startTime > 0.001f)
             SceneManager.LoadScene(1,LoadSceneMode.Single);
 	}
 }

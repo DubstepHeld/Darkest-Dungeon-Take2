@@ -306,8 +306,9 @@
     <Compile Include="Assets\Scripts\SaveLoad\SaveLoadManager.cs" />
     <Compile Include="Assets\SetItemText.cs" />
     <Compile Include="Assets\SetScene.cs" />
+    <Compile Include="Assets\TransferVars.cs" />
     <Compile Include="Assets\unimportant.cs" />
-    <Compile Include="Assets\WeaponSetter.cs" />
+    <Compile Include="Assets\WeaponSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Artwork\Sprites\Sources.txt" />

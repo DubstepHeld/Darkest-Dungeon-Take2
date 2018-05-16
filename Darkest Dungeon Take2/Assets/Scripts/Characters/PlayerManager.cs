@@ -36,32 +36,7 @@ public class PlayerManager : MonoBehaviour {
     public int saveslot = 0;
     public Button[] setSaveslotButtons;
 
-    private static bool created = false;
-
-    void Awake() {
-        if (!created) {
-            DontDestroyOnLoad(this.gameObject);
-            created = true;
-        }
-    }
-
     void Start() {
-        player[0] = GameObject.Find("Player");
-        player[1] = GameObject.Find("Player (1)");
-        player[2] = GameObject.Find("Player (2)");
-        player[3] = GameObject.Find("Player (3)");
-
-        enemyManager = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
-
-        for (int i = 0; i < 4; i++) {
-            enemy[i] = enemyManager.enemy[i];
-            character[i] = player[i].GetComponent<Character>();
-            enemyCharacter[i] = enemy[i].GetComponent<EnemyCharacter>();
-        }
-
-        
-        races = this.gameObject.GetComponentInChildren<Races>();
-
         image = characterIcon.GetComponent<Image>();
         image.sprite = races.idleSprites[selected];
         character[selected].border.SetActive(true);
@@ -166,8 +141,7 @@ public class PlayerManager : MonoBehaviour {
             character[selected].UpdateStats();
         }
     }
-
-
+    
 	public void setSaveslot(int ss) {
 		for (int i = 0; i < 4; i++) {
 			if (i == ss)
@@ -180,12 +154,8 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void Save() {
-        fightManager = GameObject.Find("GameManager").GetComponent<FightManager>();
-
-		for (int i = 0; i < 4; i++) {
-			SaveLoadManager.SavePlayer (character, saveslot);
-			SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);
-		}
+		SaveLoadManager.SavePlayer (character, saveslot);
+		SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);
 		SaveLoadManager.SaveGameData (fightManager, saveslot);
 	}
 		

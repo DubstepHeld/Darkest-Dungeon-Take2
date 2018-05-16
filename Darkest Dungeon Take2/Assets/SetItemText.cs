@@ -5,42 +5,39 @@ using UnityEngine;
 
 public class SetItemText : MonoBehaviour {
 
-    public WeaponSetter wSetter;
+    public TransferVars transfer;
+    public Items items;
 
-    public Text weaponText0;
-    public Text weaponStats0_1;
-    public Text weaponStats0_2;
-    public Text weaponText1;
-    public Text weaponStats1_1;
-    public Text weaponStats1_2;
-    public Text weaponText2;
-    public Text weaponStats2_1;
-    public Text weaponStats2_2;
-    public Text weaponText3;
-    public Text weaponStats3_1;
-    public Text weaponStats3_2;
+    public Text[] weaponText;
+    public Text[] weaponTier;
+    public Text[] weaponDamage;
+
+    public int tier;
 
     // Use this for initialization
     void Start () {
-        //UpdateText();
+        transfer = GameObject.FindGameObjectWithTag("Transfer").GetComponent<TransferVars>();
+        UpdateText();
     }
-	
+
 	// Update is called once per frame
 	public void UpdateText() {
-        //nicht schön, funktioniert aber...
-        weaponText0.text = wSetter.carriedItem[0].weaponName;
-        weaponText1.text = wSetter.carriedItem[1].weaponName;
-        weaponText2.text = wSetter.carriedItem[2].weaponName;
-        weaponText3.text = wSetter.carriedItem[3].weaponName;
+        for(int i = 0; i < 4; i++) {
+            weaponText[i].text = transfer.weaponName[i];
+            weaponTier[i].text = transfer.weaponTier[i].ToString();
+            weaponDamage[i].text = transfer.weaponDamage[i].ToString();
+        }
+    }
 
-        weaponStats0_1.text = "Tier: " + wSetter.carriedItem[0].eWeaponTier.ToString();
-        weaponStats1_1.text = "Tier: " + wSetter.carriedItem[1].eWeaponTier.ToString();
-        weaponStats2_1.text = "Tier: " + wSetter.carriedItem[2].eWeaponTier.ToString();
-        weaponStats3_1.text = "Tier: " + wSetter.carriedItem[3].eWeaponTier.ToString();
+    public void SetTier(int tier) {
+        this.tier = tier;
+    }
 
-        weaponStats0_2.text = "Damage: " + wSetter.carriedItem[0].weaponDamage.ToString();
-        weaponStats1_2.text = "Damage: " + wSetter.carriedItem[1].weaponDamage.ToString();
-        weaponStats2_2.text = "Damage: " + wSetter.carriedItem[2].weaponDamage.ToString();
-        weaponStats3_2.text = "Damage: " + wSetter.carriedItem[3].weaponDamage.ToString();
+    public void SwitchWeapon(int characterIndex) {
+        items.SetWeapon(tier);
+        transfer.weaponName[characterIndex] = items.itemName;
+        transfer.weaponTier[characterIndex] = tier;
+        transfer.weaponDamage[characterIndex] = items.damage;
+        UpdateText();
     }
 }
