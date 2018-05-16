@@ -19,13 +19,29 @@ public class EnemyManager : MonoBehaviour {
 
     bool[] alive = new bool[4] { true, true, true, true };
 
-	void Start () {
+    private static bool created = false;
 
-	}
-	
-	void Update () {
-        
-	}
+    void Awake() {
+        if (!created) {
+            DontDestroyOnLoad(this.gameObject);
+            created = true;
+        }
+    }
+
+    void Start() {
+        enemy[0] = GameObject.Find("Enemy");
+        enemy[1] = GameObject.Find("Enemy (1)");
+        enemy[2] = GameObject.Find("Enemy (2)");
+        enemy[3] = GameObject.Find("Enemy (3)");
+
+        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+
+        for (int i = 0; i < 4; i++) {
+            player[i] = playerManager.player[i];
+            character[i] = player[i].GetComponent<Character>();
+            enemyCharacter[i] = enemy[i].GetComponent<EnemyCharacter>();
+        }
+    }
 
     public void CheckDead() {
         for (int i = 0; i < 4; i++) {

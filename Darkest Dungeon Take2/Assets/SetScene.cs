@@ -6,6 +6,6 @@ using UnityEngine.SceneManagement;
 public class SetScene : MonoBehaviour {
 
     public void StartFight() {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

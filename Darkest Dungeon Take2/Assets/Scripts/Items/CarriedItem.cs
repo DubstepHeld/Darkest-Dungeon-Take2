@@ -9,16 +9,16 @@ public class CarriedItem : MonoBehaviour {
     public string weaponName;
     public int weaponDamage;
     public bool weaponEquipped = false;
-    public int eWeaponTier = 1;
+    public int eWeaponTier = 0;
 
 	void Start () {
-        UpdateWeapon();
+
 	}
 
     public void UpdateWeapon() {
         if (weaponEquipped == true) {
             items.SetWeapon(eWeaponTier);
-            weaponName = items.name;
+            weaponName = items.itemName;
             weaponDamage = items.damage;
         }
     }

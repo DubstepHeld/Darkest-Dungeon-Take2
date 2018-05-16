@@ -1,5 +1,6 @@
 WindowsStandalone
 SceneListBegin?
+Assets/Scenes/SetPermanentObjects.unity
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/PopUpMenu.unity
 SceneListEnd?
@@ -17,6 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+f2186e6a904307224419a992525f34a7 Assembly-CSharp.dll:.MenuManager
 989a5e18c66d7d65fa4dbcd38b40c1b0 Assembly-CSharp.dll:.CarriedItem
 983ca88f9e4ca880f572dc09880cf895 Assembly-CSharp.dll:.Items
 07d7a420c9d90ece77b1ce00f92d1cfc Assembly-CSharp.dll:.FightManager
@@ -85,6 +87,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SetScene
 815c16df83fe2b9ee5a89d17d1db8130 Assembly-CSharp.dll:.Assassine
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -143,7 +146,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Indicator
-cb2b10252c27e7ba27433f6d36c71f77 Assembly-CSharp.dll:.EnemyCharacter
+7d3c5211d4382808c8e852b9c453c39e Assembly-CSharp.dll:.EnemyCharacter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 96d0fbde9fd209878a0a291f82c9bcdd UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -160,4 +163,6 @@ bd66554e65a705108584e674ae7f70e1 Assembly-CSharp.dll:.Character
 815c16df83fe2b9ee5a89d17d1db8130 Assembly-CSharp.dll:.DamageDealer
 b1cf467d20c1fa99ad5839e9a5296990 Assembly-CSharp.dll:.AttackFailedIndicator
 59cdc1bef3cde65ae2369b035c02579d Assembly-CSharp.dll:.PopUpThings
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SetScene
+f92c2619ecf469dbdab0b24da5e0ef72 Assembly-CSharp.dll:.WeaponSetter
+174b54fe9d383cd85a638cab6845d82b Assembly-CSharp.dll:.SetItemText
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.unimportant

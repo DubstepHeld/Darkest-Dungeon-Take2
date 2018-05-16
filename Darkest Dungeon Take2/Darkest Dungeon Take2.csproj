@@ -282,6 +282,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Characters\Character.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyCharacter.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyManager.cs" />
@@ -303,7 +304,10 @@
     <Compile Include="Assets\Scripts\Races\Support.cs" />
     <Compile Include="Assets\Scripts\Races\Tank.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\SaveLoadManager.cs" />
+    <Compile Include="Assets\SetItemText.cs" />
     <Compile Include="Assets\SetScene.cs" />
+    <Compile Include="Assets\unimportant.cs" />
+    <Compile Include="Assets\WeaponSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Artwork\Sprites\Sources.txt" />
