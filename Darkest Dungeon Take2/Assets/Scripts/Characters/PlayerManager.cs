@@ -141,8 +141,7 @@ public class PlayerManager : MonoBehaviour {
             character[selected].UpdateStats();
         }
     }
-
-
+    
 	public void setSaveslot(int ss) {
 		for (int i = 0; i < 4; i++) {
 			if (i == ss)
@@ -155,10 +154,8 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void Save() {
-		for (int i = 0; i < 4; i++) {
-			SaveLoadManager.SavePlayer (character, saveslot);
-			SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);
-		}
+		SaveLoadManager.SavePlayer (character, saveslot);
+		SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);
 		SaveLoadManager.SaveGameData (fightManager, saveslot);
 	}
 		

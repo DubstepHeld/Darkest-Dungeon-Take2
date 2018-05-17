@@ -4273,7 +4273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fightManager: {fileID: 412127459}
-  expLevel: 50
+  expLevel: 0
   exp: 0
   startExp: 10
   nextExp: 0

@@ -18,14 +18,22 @@ public class DungeonManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        nextExp = Mathf.RoundToInt(startExp * Mathf.Pow(1.2f, expLevel));
+        NewExp();
         dungeonLevel = fightManager.wave;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (exp >= nextExp) {
+            expLevel++;
+            exp = exp - nextExp;
+            NewExp();
+        }
 	}
+
+    public void NewExp() {
+        nextExp = Mathf.RoundToInt(startExp * Mathf.Pow(1.2f, expLevel));
+    }
 
     public int calcXP() {
         return 10;
