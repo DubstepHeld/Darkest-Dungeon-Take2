@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 987
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 51
+  controlID: 113
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1578
     height: 987
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 52
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -153,11 +153,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1578
-    height: 717
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+    height: 716
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 53
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -175,9 +175,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 281
-    height: 717
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 716
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -200,9 +200,9 @@ MonoBehaviour:
     x: 281
     y: 0
     width: 1297
-    height: 717
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 716
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
@@ -226,9 +226,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 717
+    y: 716
     width: 1578
-    height: 270
+    height: 271
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 17}
@@ -364,13 +364,13 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 279
-    height: 696
+    height: 695
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e2c0f5ffd8f6f5ffe2fdf5ff8015f6ffe225f6ff8226f6ff1028f6ff1428f6ff1a28f6ffc82cf6ff202df6ffae2ef6ffb22ef6ffb82ef6ffda75f6ff24a3f6ff8220f7ff0821f7ff9822f7ffba22f7ffbe22f7ff7623f7ff1227f7ff8a27f7ff6828f7fffe2cf7ff084ff7ff8c1af9ff001bf9fff675f9ffb6c3faff844dfbff4867fbffc668fbff5069fbff246bfbff8676fbfffc7ffbff8081fbffe481fbfffcb9fbff3ccafbfff8cbfbff9accfbffeaccfbff1cf2fbffe2f5fbffa8fefbffae08fcff0c09fcff9a0afcffb60afcffba0afcffa658fcff2619feff4421feff4c23feff1c41feff46d5feff50e9feff1408ffffe664ffffdaadffff4ccdffffc0deffffe4e2ffffc6e3ffff9efbfffff4ffffff00000000282c0000de3700004a430000cc4800007a4f000028560000ae630000bc7a0000127b0000ba7b00001c7c0000627c0000ac7c0000087d0000707d0000ec490100f64a01001a4c01000c540100165501003a5601001a930100689301007c9301000c9401004494010040950100dc9501000e960100569601007896010060bb01006abc010098bf0100d6bf010080c00100e2c001002ac1010088c10100cac101000ac201008e250200e0250200e42502008c2602004228020000680500e4e3050036e405003ae40500e2e4050044e5050098e605005ef80500eef80500
+    m_ExpandedIDs: 9efbffff000000002c2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - TransferScene
+  - PopUpMenu
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -418,7 +418,7 @@ MonoBehaviour:
     x: 283
     y: 92
     width: 1293
-    height: 696
+    height: 695
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 8042.8916561782735
@@ -547,9 +547,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 809
+    y: 808
     width: 1576
-    height: 249
+    height: 250
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -563,20 +563,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Characters
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/Scripts/Characters
+  - Assets
   m_LastFoldersGridSize: 60
   m_LastProjectPath: F:\Users\Spiele\Documents\Darkest-Dungeon-Take2\Darkest Dungeon
     Take2
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 152}
-    m_SelectedIDs: 2e290000
-    m_LastClickedID: 10542
-    m_ExpandedIDs: 00000000ce270000bc2800008c29000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 143}
+    m_SelectedIDs: d4270000
+    m_LastClickedID: 10196
+    m_ExpandedIDs: 00000000d4270000c22800009229000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -604,7 +604,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ce270000bc2800008c290000
+    m_ExpandedIDs: 00000000d4270000c228000092290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
