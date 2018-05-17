@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerCharacter
   - Transfer
+  - EmergencyTransfer
   layers:
   - Default
   - TransparentFX

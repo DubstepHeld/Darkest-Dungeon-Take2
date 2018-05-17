@@ -11,9 +11,7 @@ public class Character : MonoBehaviour {
 	int prevPlayerIndex;
     public Races races;
     public PlayerManager playerManager;
-
     public SpriteRenderer spriteRenderer;
-
     public GameObject border;
     
     [Header("Character Stats")]
@@ -47,6 +45,7 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown("r") || playerIndex != prevPlayerIndex) {
+            //wenn character gewechselt wird, aktualisiert das skript automatisch
             UpdateStats();
         }
         if(health <= 0) {
@@ -55,9 +54,10 @@ public class Character : MonoBehaviour {
 	}
     
     public void UpdateStats() {
-
-		races.SetClass(playerIndex);
-
+        //Rassenwechsel/neue werte
+        //Races nimmt diese rasse an
+        //werte können dann von races übernommen werden
+        races.SetClass(playerIndex);  //inizialisiere Rassenwechsel
         health = races.health;
         damage = races.damage;
         hitChance = races.hitChance;
@@ -66,18 +66,16 @@ public class Character : MonoBehaviour {
         stunRes = races.stunRes;
         bleedRes = races.bleedRes;
         initiative = races.initiative;
-
+        //range noch nicht verwendet
         for (int i = 0; i < 4; i++) {
             range[i] = races.range[i];
         }
-        
         spriteRenderer.sprite = races.idleSprites[playerIndex];
         playerManager.image.sprite = races.idleSprites[playerIndex];
-
 		prevPlayerIndex = playerIndex;
     }
 
-    void OnMouseDown() {
+    void OnMouseDown() {    //wenn draufgeklickt wird
         playerManager.selected = position;
         playerManager.image.sprite = races.idleSprites[playerIndex];
     }

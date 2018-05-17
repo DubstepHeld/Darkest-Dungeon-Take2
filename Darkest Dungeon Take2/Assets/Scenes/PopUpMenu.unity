@@ -872,7 +872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &340928808
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1083,7 +1083,9 @@ MonoBehaviour:
   UIplayerManager: {fileID: 1080764336}
   UIenemyManager: {fileID: 1490296030}
   enemyManager: {fileID: 1490296031}
-  wave: 0
+  dungeonManager: {fileID: 1044049189}
+  playerManager: {fileID: 1080764339}
+  wave: 1
   maxWave: 3
   encounter: 0
   gold: 0
@@ -1690,7 +1692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &572553372
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2415,7 +2417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Saveslot 4
+  m_Text: Autosave
 --- !u!222 &665913242
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3407,7 +3409,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4278,6 +4280,7 @@ MonoBehaviour:
   startExp: 10
   nextExp: 0
   dungeonLevel: 0
+  startGainedXP: 10
   dLevelMulti: 1.5
 --- !u!4 &1044049190
 Transform:
@@ -4406,6 +4409,7 @@ MonoBehaviour:
   image: {fileID: 477640121}
   enemyManager: {fileID: 1490296031}
   popUpThings: {fileID: 412127461}
+  transfer: {fileID: 0}
   selected: 0
   selectedEnemy: 0
   prevSelected: 0
@@ -6761,7 +6765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1666529234
 RectTransform:
   m_ObjectHideFlags: 0

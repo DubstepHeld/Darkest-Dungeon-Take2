@@ -47,10 +47,12 @@ public class EnemyCharacter : MonoBehaviour {
         }
         if (health <= 0) {
             spriteRenderer.sprite = races.deadSprites[enemyIndex];
+            /*
             if (!XPgained) {
                 popUpThings.GainXP(dungeonManager.calcXP());
                 XPgained = true;
             }
+            */
         }
         else XPgained = false;
     }

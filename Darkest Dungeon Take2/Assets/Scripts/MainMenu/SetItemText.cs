@@ -22,6 +22,7 @@ public class SetItemText : MonoBehaviour {
 
 	// Update is called once per frame
 	public void UpdateText() {
+        //aktualisiere alle texte
         for(int i = 0; i < 4; i++) {
             weaponText[i].text = transfer.weaponName[i];
             weaponTier[i].text = transfer.weaponTier[i].ToString();

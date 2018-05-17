@@ -37,9 +37,14 @@ public class EnemyManager : MonoBehaviour {
         }
         
         if (alive[0] == false && alive[1] == false && alive[2] == false && alive[3] == false) {
-            randomCharacters();
-            fightManager.wave++;
-            fightManager.UpdateData();
+            if (fightManager.wave == fightManager.maxWave) {
+                fightManager.dungeonManager.dungeonLevel++;
+                fightManager.LoadScene(1);
+            } else {
+                randomCharacters();
+                fightManager.wave++;
+                fightManager.UpdateData();
+            }
         }
     }
 

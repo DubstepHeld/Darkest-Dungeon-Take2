@@ -282,7 +282,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Characters\Character.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyCharacter.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyManager.cs" />
@@ -292,6 +291,12 @@
     <Compile Include="Assets\Scripts\Items\CarriedItem.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\SetCharacter.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\SetItemText.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\SimpleCharacter.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\SimpleRaces.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\TransferVars.cs" />
     <Compile Include="Assets\Scripts\PopUps\AttackFailedIndicator.cs" />
     <Compile Include="Assets\Scripts\PopUps\AttackIndicator.cs" />
     <Compile Include="Assets\Scripts\PopUps\Indicator.cs" />
@@ -304,11 +309,9 @@
     <Compile Include="Assets\Scripts\Races\Support.cs" />
     <Compile Include="Assets\Scripts\Races\Tank.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\SaveLoadManager.cs" />
-    <Compile Include="Assets\SetItemText.cs" />
-    <Compile Include="Assets\SetScene.cs" />
-    <Compile Include="Assets\TransferVars.cs" />
-    <Compile Include="Assets\unimportant.cs" />
-    <Compile Include="Assets\WeaponSet.cs" />
+    <Compile Include="Assets\Scripts\SetScene.cs" />
+    <Compile Include="Assets\Scripts\unimportant.cs" />
+    <Compile Include="Assets\Scripts\WeaponSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Artwork\Sprites\Sources.txt" />

@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class TransferVars : MonoBehaviour {
 
+    /*Not destroyed on load
+     * used as variable transfer from scene to scene
+     */
+
+    [Header("Weapons")]
     public string[] weaponName;
     public int[] weaponTier;
     public int[] weaponDamage;
 
+    [Header("Weapons")]
+    public int[] characterIndex = new int[4] { 5, 5, 5, 5 };
+
     void Awake() {
         DontDestroyOnLoad(this.gameObject);
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

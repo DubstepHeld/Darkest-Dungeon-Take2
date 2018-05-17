@@ -19,14 +19,13 @@ public class PlayerManager : MonoBehaviour {
     public Image image;
     public EnemyManager enemyManager;
     public PopUpThings popUpThings;
+    public TransferVars transfer;
 
     [Header("Selected")]
-    //public string className = "empty";
     public int selected = 0;
     public int selectedEnemy = 0;
     public int prevSelected = 0;
     public int prevSelectedEnemy = 0;
-
     public int selectedSide = 0;
     public int prevSelectedSide = 0;
 
@@ -37,33 +36,34 @@ public class PlayerManager : MonoBehaviour {
     public Button[] setSaveslotButtons;
 
     void Start() {
+        transfer = GameObject.FindGameObjectWithTag("Transfer").GetComponent<TransferVars>();
         image = characterIcon.GetComponent<Image>();
         image.sprite = races.idleSprites[selected];
         character[selected].border.SetActive(true);
         enemyCharacter[selected].border.SetActive(true);
+
+        for (int i = 0; i < 4; i++) {
+            character[i].playerIndex = transfer.characterIndex[i];
+        }
     }
 	
 	void Update () {
         damage = character[selected].damage + character[selected].GetComponent<CarriedItem>().weaponDamage;
         WhichSelected();
-        
 	}
 
     public void WhichSelected() {
-        // TODO: Character nach anwählen der gegnerseite nicht erneut anwählbar. 
-        // Erst nach anwählen eines anderen characters möglich.
         selectedEnemy = enemyManager.selectedEnemy;
-        if (selected != prevSelected) {                                 //Grund
+        //aktualisiert rahmen
+        if (selected != prevSelected) { 
             character[selected].border.SetActive(true);
             character[prevSelected].border.SetActive(false);
-            //enemyCharacter[selectedEnemy].border.SetActive(false);
             prevSelected = selected;
             selectedSide = 0;
         }
-        if (enemyManager.selectedEnemy != prevSelectedEnemy) {          //Grund2
+        if (enemyManager.selectedEnemy != prevSelectedEnemy) {
             enemyCharacter[selectedEnemy].border.SetActive(true);
             enemyCharacter[prevSelectedEnemy].border.SetActive(false);
-            //character[selected].border.SetActive(false);
             prevSelectedEnemy = enemyManager.selectedEnemy;
             selectedSide = 1;
         }
@@ -71,9 +71,11 @@ public class PlayerManager : MonoBehaviour {
 
     public void Attack(int attackNum) {
         damage = character[selected].damage + character[selected].GetComponent<CarriedItem>().weaponDamage;
-        if (Hit() == true) {
-
+        if (Hit() == true && enemyCharacter[selectedEnemy].health > 0) {
             popUpThings.attack(character[selected].playerIndex, enemyCharacter[selectedEnemy].enemyIndex, true);
+            if ((enemyCharacter[selectedEnemy].health - damage) <= 0) {
+                popUpThings.GainXP(fightManager.dungeonManager.calcXP());
+            }
 
             switch (attackNum) {
                 case 0:
@@ -89,60 +91,53 @@ public class PlayerManager : MonoBehaviour {
                     Attack4();
                     break;
             }
+            Debug.Log("Character " + selected + " attacks Enemy " + selectedEnemy + " with Attack " + attackNum);
         } else {
             popUpThings.attackFailed();
         }
     }
 
+    //momentan alle attacken gleich
     public void Attack1() {
-        Debug.Log("Character " + selected + " attacks Enemy " + selectedEnemy + " with Attack 1");
+        //Attack1 stuff
         enemyCharacter[selectedEnemy].health -= damage;
     }
-
     public void Attack2() {
         //Attack2 stuff
-        Debug.Log("Character " + selected + " attacks Enemy " + selectedEnemy + " with Attack 2");
-        int damage = 4;
         enemyCharacter[selectedEnemy].health -= damage;
     }
-
     public void Attack3() {
         //Attack3 stuff
-        Debug.Log("Character " + selected + " attacks Enemy " + selectedEnemy + " with Attack 3");
-        int damage = 8;
         enemyCharacter[selectedEnemy].health -= damage;
     }
-
     public void Attack4() {
         //Attack4 stuff
-        Debug.Log("Character " + selected + " attacks Enemy " + selectedEnemy + " with Attack 4");
-        int damage = 100;
         enemyCharacter[selectedEnemy].health -= damage;
     }
 
     public bool Hit() {
+        //überprüft, ob attacke glückt
         float hitChance = character[selected].hitChance;
         float dodge = enemyCharacter[selectedEnemy].dodge/100f;
         Debug.Log("Hitchance = " + hitChance + "; Dodge = " + dodge);
         if (Random.Range(0.0f, 1.0f) < (hitChance-dodge)) {
-            Debug.Log("Attack successfull");
             return true;
         } else {
             Debug.Log("Attack failed");
             return false;
         }
     }
-
-
+    
 	public void SetCharacter(int playerIndex) {
+        //Character-Rasse aktualisieren
         if (selectedSide == 0) {
-            //Debug.Log("Position index = " + selected);
 			character[selected].playerIndex = playerIndex;
             character[selected].UpdateStats();
         }
     }
     
 	public void setSaveslot(int ss) {
+        //saveslot festlegen, damit später verwendbar
 		for (int i = 0; i < 4; i++) {
 			if (i == ss)
 				setSaveslotButtons [i].GetComponent<Image>().color = new Color32(0,255,255,255);
@@ -154,19 +149,14 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	public void Save() {
-		SaveLoadManager.SavePlayer (character, saveslot);
-		SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);
-		SaveLoadManager.SaveGameData (fightManager, saveslot);
+        //ruft datenspeicherfunktionen mit eben festgelegtem saveslot auf 
+		SaveLoadManager.SavePlayer (character, saveslot);   //speichert alle charaktere
+		SaveLoadManager.SaveEnemy (enemyCharacter, saveslot);   //speichert alle gegner
+		SaveLoadManager.SaveGameData (fightManager, saveslot);  //speichert alle sonstigen daten/fortschritt
 	}
 		
 	public void Load() {
-		
-		float[] gameStats = SaveLoadManager.LoadGameData (saveslot);
-		fightManager.wave = (int)gameStats [0];
-		fightManager.gold = (int)gameStats [1];
-		fightManager.volume = gameStats [2];
-		fightManager.UpdateData ();
-
+        //auslesen und verteilung der gespeicherten werte
 		for (int i = 0; i < 4; i++) {
 			float[] loadedEnemyStats = SaveLoadManager.LoadEnemy (i, saveslot);
 			enemyCharacter [i].enemyIndex = (int)loadedEnemyStats [4];
@@ -195,6 +185,15 @@ public class PlayerManager : MonoBehaviour {
 			character [i].stunRes = loadedStats [8];
 			character [i].bleedRes = loadedStats [9];
 		}
-
-	}
+        
+        DungeonManager dungeonManager = fightManager.dungeonManager;
+        float[] gameStats = SaveLoadManager.LoadGameData(saveslot);
+        fightManager.wave = (int)gameStats[0];
+        fightManager.gold = (int)gameStats[1];
+        fightManager.volume = gameStats[2];
+        dungeonManager.expLevel = (int)gameStats[3];
+        dungeonManager.exp = (int)gameStats[4];
+        dungeonManager.dungeonLevel = (int)gameStats[5];
+        fightManager.UpdateData();
+    }
 }
