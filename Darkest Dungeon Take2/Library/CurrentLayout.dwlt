@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 113
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,7 +370,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff000000002c2b0000
+    m_ExpandedIDs: 80f3ffffb8f3ffffecf3ffff9efbffff000000002c2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -563,19 +563,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 60
   m_LastProjectPath: F:\Users\Spiele\Documents\Darkest-Dungeon-Take2\Darkest Dungeon
     Take2
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 143}
-    m_SelectedIDs: d4270000
-    m_LastClickedID: 10196
+    m_SelectedIDs: c2280000
+    m_LastClickedID: 10434
     m_ExpandedIDs: 00000000d4270000c22800009229000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0

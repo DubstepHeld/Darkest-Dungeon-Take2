@@ -310,6 +310,7 @@
     <Compile Include="Assets\Scripts\Races\Tank.cs" />
     <Compile Include="Assets\Scripts\SaveLoad\SaveLoadManager.cs" />
     <Compile Include="Assets\Scripts\SetScene.cs" />
+    <Compile Include="Assets\Scripts\Skilltree.cs" />
     <Compile Include="Assets\Scripts\unimportant.cs" />
     <Compile Include="Assets\Scripts\WeaponSet.cs" />
   </ItemGroup>
