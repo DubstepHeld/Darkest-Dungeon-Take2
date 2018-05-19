@@ -13,6 +13,7 @@ public class Character : MonoBehaviour {
     public PlayerManager playerManager;
     public SpriteRenderer spriteRenderer;
     public GameObject border;
+	public GameObject healthbar;
     
     [Header("Character Stats")]
     public int      playerIndex = 5;                 //0=ass, 1=dd, 2=heal, 3=sup, 4=tank
@@ -27,6 +28,7 @@ public class Character : MonoBehaviour {
     public int      initiative = 0;
     public int      position;
     public int[] range = new int[4];
+	public int maxHealth = 1;
 
     /*
     [Header("Equipped stuff")]
@@ -44,12 +46,15 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		healthbar.transform.localScale = new Vector3 (10 * health / maxHealth, 1, 1);
+
 		if (Input.GetKeyDown("r") || playerIndex != prevPlayerIndex) {
             //wenn character gewechselt wird, aktualisiert das skript automatisch
             UpdateStats();
         }
         if(health <= 0) {
             spriteRenderer.sprite = races.deadSprites[playerIndex];
+			healthbar.SetActive (false);
         }
 	}
     
@@ -66,6 +71,8 @@ public class Character : MonoBehaviour {
         stunRes = races.stunRes;
         bleedRes = races.bleedRes;
         initiative = races.initiative;
+
+		maxHealth = races.health;
         //range noch nicht verwendet
         for (int i = 0; i < 4; i++) {
             range[i] = races.range[i];

@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Assassine : MonoBehaviour {
 
+	public Skilltree skills;
     public Dice dice;
 
     public string className;
@@ -20,21 +21,18 @@ public class Assassine : MonoBehaviour {
 
 
     void Start() {
-        className = "Assassine";
-        health = 7 + dice.RollDice(3);
-        damage = 5;
-        hitChance = 0.95f;
-        dodge = 10 + dice.RollDice(3);
-        blightRes = 0.70f;
-        stunRes = 0.60f;
-        bleedRes = 0.70f;
-        initiative = 9 + dice.RollDice(6);
+		Reroll ();
     }
 
     public void Reroll() {
-        health = 7 + dice.RollDice(3);
-        dodge = 10 + dice.RollDice(3);
-        initiative = 9 + dice.RollDice(6);
+		health = 7 + dice.RollDice(3) + skills.HealthBuff;
+		damage = 5 + skills.DamageBuff;
+		hitChance = 0.95f + skills.Hitchance;
+		dodge = 10 + dice.RollDice(3);
+		blightRes = 0.70f + skills.Resistence;
+		stunRes = 0.60f + skills.Resistence;
+		bleedRes = 0.70f + skills.Resistence;
+		initiative = 9 + dice.RollDice(6);
     }
 
     // Update is called once per frame

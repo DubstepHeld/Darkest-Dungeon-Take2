@@ -23,11 +23,13 @@ public class EnemyCharacter : MonoBehaviour {
     public float    stunRes = 0;
     public float    bleedRes = 0;
     public int      initiative = 0;
+	public int maxHealth = 1;
 
-    bool XPgained = false;
+    //bool XPgained = false;
 
     public GameObject weapon;
     public GameObject armor;
+	public GameObject healthbar;
 
     public PopUpThings popUpThings;
     public DungeonManager dungeonManager;
@@ -37,16 +39,19 @@ public class EnemyCharacter : MonoBehaviour {
 		//enemyIndex = Random.Range (0, 5);
         spriteRenderer = GetComponent<SpriteRenderer>();
         position = transform.GetSiblingIndex();
-        //UpdateStats();
+        UpdateStats();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		healthbar.transform.localScale = new Vector3 (10 * health / maxHealth, 1, 1);
+
 		if (Input.GetKeyDown("r") || enemyIndex != prevEnemyIndex) {
             UpdateStats();
         }
         if (health <= 0) {
             spriteRenderer.sprite = races.deadSprites[enemyIndex];
+			healthbar.SetActive (false);
             /*
             if (!XPgained) {
                 popUpThings.GainXP(dungeonManager.calcXP());
@@ -54,7 +59,7 @@ public class EnemyCharacter : MonoBehaviour {
             }
             */
         }
-        else XPgained = false;
+        //else XPgained = false;
     }
 
     public void UpdateStats() {
@@ -68,6 +73,8 @@ public class EnemyCharacter : MonoBehaviour {
         stunRes = races.stunRes;
         bleedRes = races.bleedRes;
         initiative = races.initiative;
+
+		maxHealth = races.health;
 
         spriteRenderer.sprite = races.idleSprites[enemyIndex];
 

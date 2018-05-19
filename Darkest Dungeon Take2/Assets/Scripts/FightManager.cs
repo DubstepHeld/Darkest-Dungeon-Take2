@@ -19,6 +19,7 @@ public class FightManager : MonoBehaviour {
     public GameObject UIplayerManager;
     public GameObject UIenemyManager;
     public EnemyManager enemyManager;
+	public GameObject UISkilltree;
 
     public DungeonManager dungeonManager;
     public PlayerManager playerManager;
@@ -33,6 +34,7 @@ public class FightManager : MonoBehaviour {
     void Start() {
         UpdateData();
         enemyManager.randomCharacters();
+		UISkilltree.SetActive (false);
     }
 
     void Update() {
@@ -48,6 +50,13 @@ public class FightManager : MonoBehaviour {
 				SaveLoadMenu.SetActive (false);
             }
         }
+		if (Input.GetKeyDown("m")) {
+			if (UISkilltree.activeSelf == true) {
+				UISkilltree.SetActive(false);
+			} else {
+				UISkilltree.SetActive(true);
+			}
+		}
     }
 
 	public void UpdateData() {

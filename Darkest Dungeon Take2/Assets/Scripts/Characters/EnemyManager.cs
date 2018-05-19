@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour {
     public GameObject[] player = new GameObject[4];
     public Character[] character = new Character[4];
     public FightManager fightManager;
+	public PopUpThings popUpThings;
 
     public string className = "empty";
     public int selected = 0;
@@ -24,7 +25,36 @@ public class EnemyManager : MonoBehaviour {
 	}
 	
 	void Update () {
-        
+		selected = playerManager.selected;
+		selectedEnemy = playerManager.selectedEnemy;
+
+		if(Input.GetKeyDown("l") ){
+			Attack();
+		}
+	}
+
+	public bool EnemyHit() {
+		//überprüft, ob attacke glückt
+		float hitChance = enemyCharacter[selectedEnemy].hitChance;
+		float dodge = character[selectedEnemy].dodge/100f;
+		Debug.Log("Hitchance = " + hitChance + "; Dodge = " + dodge);
+		if (Random.Range(0.0f, 1.0f) < (hitChance-dodge)) {
+			return true;
+		} else {
+			Debug.Log("Attack failed");
+			return false;
+		}
+	}
+
+	public void Attack() {
+		int damage;
+		damage = enemyCharacter [selectedEnemy].damage;
+		if (EnemyHit () == true && enemyCharacter[selectedEnemy].health > 0 && character[selected].health > 0) {
+			character [selected].health -= damage;
+			popUpThings.attack (character [selected].playerIndex, enemyCharacter [selectedEnemy].enemyIndex, false);
+		} else {
+			popUpThings.attackFailed();
+		}
 	}
 
     public void CheckDead() {
@@ -52,6 +82,7 @@ public class EnemyManager : MonoBehaviour {
         for (int i = 0; i < 4; i++) {
             enemyCharacter[i].enemyIndex = Random.Range(0, 5);
             enemyCharacter[i].UpdateStats();
+			enemyCharacter [i].healthbar.SetActive (true);
         }
     }
 

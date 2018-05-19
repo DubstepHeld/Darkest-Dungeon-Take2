@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Tank : MonoBehaviour {
 
+	public Skilltree skills;
     public Dice dice;
 
     public string   className;
@@ -20,21 +21,18 @@ public class Tank : MonoBehaviour {
 
 
     void Start() {
-        className = "Tank";
-        health = 12 + dice.RollDice(3);
-        damage = 2;
-        hitChance = 0.90f;
-        dodge = 3 + dice.RollDice(6);
-        blightRes = 0.70f;
-        stunRes = 0.80f;
-        bleedRes = 0.80f;
-        initiative = 5 + dice.RollDice(4);
+		Reroll ();
     }
 
     public void Reroll() {
-        health = 12 + dice.RollDice(3);
-        dodge = 3 + dice.RollDice(6);
-        initiative = 5 + dice.RollDice(4);
+		health = 12 + dice.RollDice(3) + skills.HealthBuff;
+		damage = 2 + skills.DamageBuff;
+		hitChance = 0.90f;
+		dodge = 3 + dice.RollDice(6);
+		blightRes = 0.70f + skills.Resistence;
+		stunRes = 0.80f + skills.Resistence;
+		bleedRes = 0.80f + skills.Resistence;
+		initiative = 5 + dice.RollDice(4);
     }
 
     // Update is called once per frame

@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class DamageDealer : MonoBehaviour {
 
+	public Skilltree skills;
     public Dice dice;
 
     public string className;
@@ -20,21 +21,18 @@ public class DamageDealer : MonoBehaviour {
 
 
     void Start() {
-        className = "DamageDealer";
-        health = 8 + dice.RollDice(3);
-        damage = 4;
-        hitChance = 0.95f;
-        dodge = 5 + dice.RollDice(6);
-        blightRes = 0.80f;
-        stunRes = 0.80f;
-        bleedRes = 0.60f;
-        initiative = 6 + dice.RollDice(4);
+		Reroll ();
     }
 
     public void Reroll() {
-        health = 8 + dice.RollDice(3);
-        dodge = 5 + dice.RollDice(6);
-        initiative = 6 + dice.RollDice(4);
+		health = 8 + dice.RollDice(3) + skills.HealthBuff;
+		damage = 4 + skills.DamageBuff;
+		hitChance = 0.95f;
+		dodge = 5 + dice.RollDice(6);
+		blightRes = 0.80f + skills.Resistence;
+		stunRes = 0.80f + skills.Resistence;
+		bleedRes = 0.60f + skills.Resistence;
+		initiative = 6 + dice.RollDice(4);
     }
 
     // Update is called once per frame

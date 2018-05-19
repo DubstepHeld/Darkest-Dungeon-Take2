@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Skilltree : MonoBehaviour {
@@ -74,6 +75,7 @@ public class Skilltree : MonoBehaviour {
 
 
 	public void unlockBarbar() {
+		
 		unlockedBarbar = true;
 	}
 
@@ -240,6 +242,11 @@ public class Skilltree : MonoBehaviour {
 	public void BuffEverybody(int EverybodyBuff) {
 		DamageBuff += EverybodyBuff;
 		HealthBuff += EverybodyBuff;
+	}
+
+
+	public void buttonActivated() {
+		
 	}
 
 }

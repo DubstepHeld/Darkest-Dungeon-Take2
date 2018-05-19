@@ -23,17 +23,21 @@ public class AttackIndicator : MonoBehaviour {
         races = GameObject.Find("RacesManager").GetComponent<Races>();
     }
 	
-    public void PopUp(float duration, int characterIndex, int enemyIndex, bool attackSide) {
+	public void PopUp(float duration, int characterIndex, int enemyIndex, bool attackSide) {
         startTime = Time.time;
+			this.duration = duration;
+			this.characterIndex = characterIndex;
+			this.enemyIndex = enemyIndex;
+			this.attackSide = attackSide;
 
-        this.duration = duration;
-        this.characterIndex = characterIndex;
-        this.enemyIndex = enemyIndex;
-        this.attackSide = attackSide;
-
-        races = GameObject.Find("RacesManager").GetComponent<Races>();
-        character.sprite = races.GetSprite(characterIndex, attackSide, true);
-        enemy.sprite = races.GetSprite(enemyIndex, attackSide, false);
+			races = GameObject.Find ("RacesManager").GetComponent<Races> ();
+		if (attackSide == true) {
+			character.sprite = races.GetSprite (characterIndex, attackSide, true);
+			enemy.sprite = races.GetSprite (enemyIndex, attackSide, false);
+		} else {
+			character.sprite = races.GetSprite (characterIndex, attackSide, false);
+			enemy.sprite = races.GetSprite (enemyIndex, attackSide, true);
+		}
     }
 
 	// Update is called once per frame
@@ -41,6 +45,10 @@ public class AttackIndicator : MonoBehaviour {
         if (Time.time - startTime > duration) {
             Destroy(this.gameObject);
         }
-        character.gameObject.transform.Translate(movementSpeed*Time.deltaTime, 0.0f, 0.0f);
+		if (attackSide == true) {
+			character.gameObject.transform.Translate (movementSpeed * Time.deltaTime, 0.0f, 0.0f);
+		} else {
+			enemy.gameObject.transform.Translate(-movementSpeed * Time.deltaTime, 0.0f, 0.0f);
+		}
     }
 }

@@ -71,7 +71,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Attack(int attackNum) {
         damage = character[selected].damage + character[selected].GetComponent<CarriedItem>().weaponDamage;
-        if (Hit() == true && enemyCharacter[selectedEnemy].health > 0) {
+		if (Hit() == true && enemyCharacter[selectedEnemy].health > 0 && character[selected].health > 0) {
             popUpThings.attack(character[selected].playerIndex, enemyCharacter[selectedEnemy].enemyIndex, true);
             if ((enemyCharacter[selectedEnemy].health - damage) <= 0) {
                 popUpThings.GainXP(fightManager.dungeonManager.calcXP());
@@ -100,19 +100,19 @@ public class PlayerManager : MonoBehaviour {
     //momentan alle attacken gleich
     public void Attack1() {
         //Attack1 stuff
-        enemyCharacter[selectedEnemy].health -= damage;
+        enemyCharacter[selectedEnemy].health -= damage + 1;
     }
     public void Attack2() {
         //Attack2 stuff
-        enemyCharacter[selectedEnemy].health -= damage;
+        enemyCharacter[selectedEnemy].health -= damage + 2;
     }
     public void Attack3() {
         //Attack3 stuff
-        enemyCharacter[selectedEnemy].health -= damage;
+        enemyCharacter[selectedEnemy].health -= damage + 4;
     }
     public void Attack4() {
         //Attack4 stuff
-        enemyCharacter[selectedEnemy].health -= damage;
+        enemyCharacter[selectedEnemy].health -= damage + 8;
     }
 
     public bool Hit() {

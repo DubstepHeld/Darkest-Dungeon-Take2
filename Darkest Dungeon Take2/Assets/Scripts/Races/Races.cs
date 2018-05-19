@@ -63,8 +63,7 @@ public class Races : MonoBehaviour {
                 range[i] = support.range[i];
                 Debug.Log("support " + i + ": " + support.range[i]);
             }
-        }
-		else if (playerIndex == 4) {
+        } else if (playerIndex == 4) {
             health = tank.health;
             damage = tank.damage;
             hitChance = tank.hitChance;
@@ -73,8 +72,7 @@ public class Races : MonoBehaviour {
             stunRes = tank.stunRes;
             bleedRes = tank.bleedRes;
             initiative = tank.initiative;
-        }
-		else if (playerIndex == 1) {
+        } else if (playerIndex == 1) {
             health = damageDealer.health;
             damage = damageDealer.damage;
             hitChance = damageDealer.hitChance;
@@ -83,8 +81,7 @@ public class Races : MonoBehaviour {
             stunRes = damageDealer.stunRes;
             bleedRes = damageDealer.bleedRes;
             initiative = damageDealer.initiative;
-        }
-		else if (playerIndex == 2) {
+        } else if (playerIndex == 2) {
             health = healer.health;
             damage = healer.damage;
             hitChance = healer.hitChance;
@@ -93,8 +90,7 @@ public class Races : MonoBehaviour {
             stunRes = healer.stunRes;
             bleedRes = healer.bleedRes;
             initiative = healer.initiative;
-        }
-		else if (playerIndex == 0) {
+        } else if (playerIndex == 0) {
             health = assassine.health;
             damage = assassine.damage;
             hitChance = assassine.hitChance;
@@ -103,8 +99,7 @@ public class Races : MonoBehaviour {
             stunRes = assassine.stunRes;
             bleedRes = assassine.bleedRes;
             initiative = assassine.initiative;
-        }
-        else {
+        } else {
             playerIndex = 5;
         }
 		Debug.Log("race = " + playerIndex);

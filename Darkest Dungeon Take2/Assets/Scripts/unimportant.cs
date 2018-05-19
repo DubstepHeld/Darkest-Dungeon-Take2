@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class unimportant : MonoBehaviour {
 
     float startTime;
+	public float duration = 0.01f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,7 @@ public class unimportant : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time - startTime > 0.001f)
+		if (Time.time - startTime > duration)
             SceneManager.LoadScene(1,LoadSceneMode.Single);
 	}
 }
