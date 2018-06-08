@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyCharacter : MonoBehaviour {
 
+	//Made by Samuel
+
     //public string className = "empty";
 	public int enemyIndex = 5;  //0=ass, 1=dd, 2=heal, 3=sup, 4=tank
 	int prevEnemyIndex;

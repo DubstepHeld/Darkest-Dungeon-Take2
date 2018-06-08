@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour {
 
+	//Made by Samuel
+
     float startTime;
     float duration;
     int gainedXP;
@@ -14,13 +16,8 @@ public class Indicator : MonoBehaviour {
     int random1, random2;
     int randomRange = 50;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
+		//Zerstörung nach Zeit duration
 		if (Time.time - startTime > duration) {
             Destroy(this.gameObject);
         }
@@ -35,6 +32,8 @@ public class Indicator : MonoBehaviour {
     }
 
     void OnGUI() {
+		//Zur Darstellung von GUI-Elementen
+		//hier: Text
         guiStyle.fontSize = 30;
         guiStyle.normal.textColor = Color.white;
         guiStyle.alignment = TextAnchor.MiddleCenter;

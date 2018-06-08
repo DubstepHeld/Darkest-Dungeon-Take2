@@ -10,10 +10,10 @@ public static class SaveLoadManager {
 	public static void SavePlayer(Character[] player, int saveslot) {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream stream;
-        stream = new FileStream(Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav", FileMode.Create);
+		stream = new FileStream(Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav", FileMode.Create);		//ein datenstream (Player.sav) wird erstellt
         PlayerData data = new PlayerData(player);
-        bf.Serialize(stream, data);
-        stream.Close();
+        bf.Serialize(stream, data);		//der Stream wird mit den zu speichernden Daten verknüpft und dadurch verschlüsselt.
+        stream.Close();		//muss geschlossen werden, sonst regnet es beim nächsten Speicherversuch Errors
 	}
 
 	public static void SaveEnemy(EnemyCharacter[] enemy, int saveslot) {
@@ -38,10 +38,12 @@ public static class SaveLoadManager {
 	public static float[] LoadPlayer(int position, int saveslot) {
 		if (File.Exists (Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav")) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream stream = new FileStream (Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav", FileMode.Open);
-			PlayerData data = bf.Deserialize (stream) as PlayerData;
+			FileStream stream = new FileStream (Application.persistentDataPath + "/slot" + saveslot.ToString() + "Player.sav", FileMode.Open);		//Öffnen der verschlüsselten Speicherdatei
+			PlayerData data = bf.Deserialize (stream) as PlayerData;		//entschlüsseln der Datei
 			stream.Close ();
 
+			//Ausgabe der Daten
+			//ausgabe nach Position des Characters
             float[] stats = new float[10];
             for (int i = 0; i < stats.Length; i++) {
                 if (position == 0)
@@ -107,6 +109,7 @@ public static class SaveLoadManager {
 
 [Serializable]
 public class GameProgress {
+	//Spieldateien
 	public float[] gameData;
 
 	public GameProgress(FightManager fightManager) {
@@ -125,6 +128,7 @@ public class GameProgress {
 
 [Serializable]
 public class PlayerData {
+	//Characterdaten[position des Characters, zu speichernde variable]
     public float[,] stats;
 	public PlayerData(Character[] player) {
         stats = new float[4, 10];
@@ -146,6 +150,7 @@ public class PlayerData {
 
 [Serializable]
 public class EnemyData {
+	//Enemydaten
     public float[,] stats;
     public EnemyData(EnemyCharacter[] enemy) {
         stats = new float[4, 10];

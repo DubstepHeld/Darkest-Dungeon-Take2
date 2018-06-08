@@ -5,15 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class Races : MonoBehaviour {
 
+	//Made by Samuel
+	//für Erklärung der einzelnen Rassen siehe: Assassine.cs
+
     public Support support;
     public Tank tank;
     public DamageDealer damageDealer;
     public Healer healer;
     public Assassine assassine;
 
-    //string _className;
-    //public int playerIndex;
-    //public int enemyIndex;
     public int health = 100;
     public int damage;
     public float hitChance;
@@ -32,6 +32,7 @@ public class Races : MonoBehaviour {
 
     public Sprite GetSprite(int index, bool player, bool attacker) {
         Sprite sprite = new Sprite();
+		//Zum Auslesen der attack- und hit-Sprites
         if (player == true) {
             if (attacker == true) {
                 sprite = attackSprites[index];
@@ -50,6 +51,7 @@ public class Races : MonoBehaviour {
 
     public void SetClass(int playerIndex) {
         Reroll();
+		//Rases.cs (this) nimmt Werte der entsprechenden Rasse an. Diese können dann von den Character.cs-skripts ausgelesen werden
 		if (playerIndex == 3) {
             health = support.health;
             damage = support.damage;
@@ -59,10 +61,6 @@ public class Races : MonoBehaviour {
             stunRes = support.stunRes;
             bleedRes = support.bleedRes;
             initiative = support.initiative;
-            for (int i = 0; i < 4; i++) {
-                range[i] = support.range[i];
-                Debug.Log("support " + i + ": " + support.range[i]);
-            }
         } else if (playerIndex == 4) {
             health = tank.health;
             damage = tank.damage;
@@ -106,6 +104,7 @@ public class Races : MonoBehaviour {
     }
 
     public void Reroll() {
+		//Alle Rassen werden neu ausgewürfelt. Dadurch sind nicht alle Charactere einer Rasse gleich, sondern weichen etwas voneinander ab
         assassine.Reroll();
         damageDealer.Reroll();
         healer.Reroll();

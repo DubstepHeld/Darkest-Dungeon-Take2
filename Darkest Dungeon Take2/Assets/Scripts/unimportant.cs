@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class unimportant : MonoBehaviour {
 
+	//Made by Samuel
+	//Für den Ladebildschirm am Anfang (AlwaysLoadFirstTransferScene)
+
     float startTime;
 	public float duration = 0.01f;
 
-	// Use this for initialization
 	void Start () {
         startTime = Time.time;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (Time.time - startTime > duration)
             SceneManager.LoadScene(1,LoadSceneMode.Single);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttackIndicator : MonoBehaviour {
 
+	//Made by Samuel
+
     float startTime;
     float duration;
 
@@ -18,19 +20,17 @@ public class AttackIndicator : MonoBehaviour {
 
     public Races races;
 
-	// Use this for initialization
 	void Start () {
         races = GameObject.Find("RacesManager").GetComponent<Races>();
     }
 	
-	public void PopUp(float duration, int characterIndex, int enemyIndex, bool attackSide) {
+	public void PopUp(float duration, int characterIndex, int enemyIndex, bool attackSide) {		//attacksŚide: true=character, false=enemy
         startTime = Time.time;
-			this.duration = duration;
-			this.characterIndex = characterIndex;
-			this.enemyIndex = enemyIndex;
-			this.attackSide = attackSide;
-
-			races = GameObject.Find ("RacesManager").GetComponent<Races> ();
+		this.duration = duration;
+		this.characterIndex = characterIndex;
+		this.enemyIndex = enemyIndex;
+		this.attackSide = attackSide;
+		races = GameObject.Find ("RacesManager").GetComponent<Races> ();	//erneut ausgeführt, da unklar, ob Start oder Funktion zuerst ausgeführt wird
 		if (attackSide == true) {
 			character.sprite = races.GetSprite (characterIndex, attackSide, true);
 			enemy.sprite = races.GetSprite (enemyIndex, attackSide, false);
@@ -40,11 +40,12 @@ public class AttackIndicator : MonoBehaviour {
 		}
     }
 
-	// Update is called once per frame
 	void Update () {
+		//Zerstörung nach gewisser Zeitspanne
         if (Time.time - startTime > duration) {
             Destroy(this.gameObject);
         }
+		//je nachdem, welche Seite angreift, bewegt sich der Angreifer auf seinen Kontrahenten zu
 		if (attackSide == true) {
 			character.gameObject.transform.Translate (movementSpeed * Time.deltaTime, 0.0f, 0.0f);
 		} else {

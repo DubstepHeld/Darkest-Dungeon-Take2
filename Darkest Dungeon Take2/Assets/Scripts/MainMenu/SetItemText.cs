@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SetItemText : MonoBehaviour {
 
+	//Made by Samuel
+
     public TransferVars transfer;
     public Items items;
 

@@ -5,11 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Dice : MonoBehaviour {
 
-	public void Update() {
-		if (Input.GetKeyDown ("e")) {
-			Debug.Log ("E IS DOWN!!!");
-		}
-	}
+	//Made by Samuel
+
 	public int RollDice(int max) {
         int value = Random.Range(0, max + 1);       //+1 weil min(inclusive) und max(exclusive)
         return value;

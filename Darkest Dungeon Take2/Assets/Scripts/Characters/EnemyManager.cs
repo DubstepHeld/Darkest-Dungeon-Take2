@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyManager : MonoBehaviour {
 
+	//Made by Samuel
+
     public GameObject[] enemy = new GameObject[4];
     public EnemyCharacter[] enemyCharacter = new EnemyCharacter[4];
     public PlayerManager playerManager;

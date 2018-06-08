@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SetCharacter : MonoBehaviour {
+
+	//Made by Samuel
+
     public GameObject[] players;
     public TransferVars transfer;
     public SimpleRaces races;

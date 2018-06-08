@@ -7,6 +7,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class FightManager : MonoBehaviour {
 
+	//Made by Samuel
+
     [Header("Objekte")]
     public GameObject PopUpMenuParent;
     public GameObject PopUpMenu;

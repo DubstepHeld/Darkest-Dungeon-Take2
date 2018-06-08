@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
+	//Made by Samuel
+
     [Header("Characters")]
     public GameObject[] player = new GameObject[4];
     public Character[] character = new Character[4];

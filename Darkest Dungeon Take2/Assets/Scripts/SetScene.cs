@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SetScene : MonoBehaviour {
 
+	//made by Samuel
+
     public void StartFight() {
+		//selbsterklärend
         SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

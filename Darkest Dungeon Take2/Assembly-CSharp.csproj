@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\DungeonManager.cs" />
      <Compile Include="Assets\Scripts\FightManager.cs" />
      <Compile Include="Assets\Scripts\Items\CarriedItem.cs" />
-     <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Items\Items.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\SetCharacter.cs" />
@@ -95,12 +94,12 @@
      <Compile Include="Assets\Scripts\SetScene.cs" />
      <Compile Include="Assets\Scripts\Skilltree.cs" />
      <Compile Include="Assets\Scripts\unimportant.cs" />
-     <Compile Include="Assets\Scripts\WeaponSet.cs" />
      <None Include="Assets\Fonts\dovahkiin\Font License.txt.txt" />
      <None Include="Assets\Changelog.txt" />
      <None Include="Assets\Artwork\Sprites\Sources.txt" />
      <None Include="Assets\ToDo Liste.txt" />
      <None Include="Assets\Fonts\savour_pinacolada\LICENSE REQUEST.txt" />
+     <None Include="Assets\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/SDCard/ProgrammeUnity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

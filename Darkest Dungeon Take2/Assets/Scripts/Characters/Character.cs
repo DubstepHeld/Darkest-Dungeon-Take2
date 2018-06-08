@@ -4,8 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class Character : MonoBehaviour {
-    
-    //public string className = "empty";
+
+	//Made by Samuel
 
 	[Header("Script stuff")]
 	int prevPlayerIndex;
@@ -16,7 +16,7 @@ public class Character : MonoBehaviour {
 	public GameObject healthbar;
     
     [Header("Character Stats")]
-    public int      playerIndex = 5;                 //0=ass, 1=dd, 2=heal, 3=sup, 4=tank
+    public int      playerIndex = 5;                 //0=ass, 1=dd, 2=heal, 3=sup, 4=tank, 5=empty
     public int      health =     100;
     public int      damage =     0;
     public int      armor =      0;
@@ -30,26 +30,18 @@ public class Character : MonoBehaviour {
     public int[] range = new int[4];
 	public int maxHealth = 1;
 
-    /*
-    [Header("Equipped stuff")]
-    public GameObject weapon;
-    public GameObject armorObject;
-    */
-    
 
-	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         position = transform.GetSiblingIndex();
         UpdateStats();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		healthbar.transform.localScale = new Vector3 (10 * health / maxHealth, 1, 1);
 
 		if (Input.GetKeyDown("r") || playerIndex != prevPlayerIndex) {
-            //wenn character gewechselt wird, aktualisiert das skript automatisch
+            //wenn character gewechselt wird, aktualisiert das skript die Rasse
             UpdateStats();
         }
         if(health <= 0) {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DungeonManager : MonoBehaviour {
 
+	//Made by Samuel
+
     public FightManager fightManager;
 
     [Header("Player Level")]
@@ -17,13 +19,11 @@ public class DungeonManager : MonoBehaviour {
     public int startGainedXP = 10;
     public float dLevelMulti = 1.5f;
 
-	// Use this for initialization
 	void Start () {
         NewExp();
         dungeonLevel = fightManager.wave;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
         dungeonLevel = fightManager.wave;
         if (exp >= nextExp) {
@@ -33,11 +33,11 @@ public class DungeonManager : MonoBehaviour {
         }
 	}
 
-    public void NewExp() {
-        nextExp = Mathf.RoundToInt(startExp * Mathf.Pow(1.2f, expLevel));
+	public void NewExp() {	//Versuch einer passenden potenz für die benötigte Erfahrung pro Level
+        nextExp = Mathf.RoundToInt(startExp * Mathf.Pow(1.2f, expLevel));		
     }
 
-    public int calcXP() {
-        return (Mathf.RoundToInt((startGainedXP + Random.Range(-dungeonLevel, dungeonLevel)) * Mathf.Pow(1.1f, dLevelMulti)));
+	public int calcXP() {	//Berechnung der erhaltenen Erfahrung bei Kill eines Gegners
+        return (Mathf.RoundToInt((startGainedXP + Random.Range(-dungeonLevel, dungeonLevel)) * Mathf.Pow(1.1f, dLevelMulti)));		
     }
 }

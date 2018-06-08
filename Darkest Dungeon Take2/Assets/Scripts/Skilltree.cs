@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Skilltree : MonoBehaviour {
 
+	//Made by David
+
 	public bool unlockedBarbar = false;
 	public bool unlockedRoemer = false;
 	public bool unlockedPerser = false;
@@ -16,9 +18,6 @@ public class Skilltree : MonoBehaviour {
 	public bool unlockedFr = false;
 	public bool unlockedAmi = false;
 	public bool unlockedIsis = false;
-
-
-
 
 
 	public int Resistence;

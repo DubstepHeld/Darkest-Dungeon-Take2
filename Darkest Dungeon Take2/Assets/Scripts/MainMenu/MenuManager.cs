@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour {
 
+	//Made by Samuel
+
     public GameObject town;
     public GameObject blacksmithMenu;
     public GameObject tavernMenu;

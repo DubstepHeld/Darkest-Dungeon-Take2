@@ -8,6 +8,7 @@ public class Assassine : MonoBehaviour {
 	public Skilltree skills;
     public Dice dice;
 
+	//Stats
     public string className;
     public int health;
     public int damage;
@@ -17,10 +18,10 @@ public class Assassine : MonoBehaviour {
     public float stunRes;
     public float bleedRes;
     public int initiative;
-    public int[] range = new int[4] { 0, 0, 0, 0 };
-
+    public int[] range = new int[4] { 0, 0, 0, 0 };		//nicht verwendet. Enthalten in einem evtl. Update
 
     void Start() {
+		//Zufällige Werte zu Beginn
 		Reroll ();
     }
 
@@ -33,10 +34,5 @@ public class Assassine : MonoBehaviour {
 		stunRes = 0.60f + skills.Resistence;
 		bleedRes = 0.70f + skills.Resistence;
 		initiative = 9 + dice.RollDice(6);
-    }
-
-    // Update is called once per frame
-    void Update() {
-
     }
 }

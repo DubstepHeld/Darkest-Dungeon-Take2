@@ -5,6 +5,8 @@ using UnityEngine;
 public class CarriedItem : MonoBehaviour {
     //angelegte waffe, wird jedem player zugewiesen
 
+	//Made by Samuel
+
     public Items items;
     public TransferVars transfer;
 

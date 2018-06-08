@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SimpleCharacter : MonoBehaviour {
 
+	//Made by Samuel
+
     /*fast völlig zweckfrei
      *nur zum auslesen, wenn objekt angeklickt wird 
      */

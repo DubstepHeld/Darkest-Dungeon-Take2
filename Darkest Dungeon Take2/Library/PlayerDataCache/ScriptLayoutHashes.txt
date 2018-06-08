@@ -1,11 +1,11 @@
 WindowsStandalone
 SceneListBegin?
-Assets/Scenes/TransferScene.unity
+Assets/Scenes/AlwaysLoadFirstTransferScene.unity
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/PopUpMenu.unity
 SceneListEnd?
-983ca88f9e4ca880f572dc09880cf895 Assembly-CSharp.dll:.Item
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Dice
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Roemer
 cd47de0a9d08b9483f9f77be35805cd5 Assembly-CSharp.dll:.SetCharacter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -22,6 +22,8 @@ df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.T
 12334ded185774f4fb713f6d931015d5 Assembly-CSharp.dll:.CarriedItem
 983ca88f9e4ca880f572dc09880cf895 Assembly-CSharp.dll:.Items
 a0d6082b922714318da40cfe1002c284 Assembly-CSharp.dll:.FightManager
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Brite
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Aegypter
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -88,7 +90,6 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SetScene
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WeaponSet
 c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Assassine
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -129,12 +130,17 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9887ebc6c230e10fbe237313078c3d26 Assembly-CSharp.dll:.DungeonManager
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Japaner
 c598ebc3549ee447a87fb32894bf9105 Assembly-CSharp.dll:.AttackIndicator
 f2186e6a904307224419a992525f34a7 Assembly-CSharp.dll:.MenuManager
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Isis
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Barbar
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Amerikaner
 c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Support
 7837b7ecb14c2d1f94478ed78e2859d5 Assembly-CSharp.dll:.EnemyManager
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Perser
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -162,26 +168,18 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.HomoSapiens
 c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Healer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 8d0ea3a5cc6751c0c8c5bd0c4eb835ae Assembly-CSharp.dll:.SimpleCharacter
 d2d25338a65aff78742a9d0c1af3b932 Assembly-CSharp.dll:.SimpleRaces
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.HRRDN
 15d64ff9bd05b0b3fe3dc3b928003b3b Assembly-CSharp.dll:.Character
 c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.DamageDealer
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Deutscher
+c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Neandertaler
 b6f31de898c0a978664abd4d1424a0c5 Assembly-CSharp.dll:.SetItemText
 b1cf467d20c1fa99ad5839e9a5296990 Assembly-CSharp.dll:.AttackFailedIndicator
 59cdc1bef3cde65ae2369b035c02579d Assembly-CSharp.dll:.PopUpThings
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Isis
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Perser
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.HomoSapiens
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Aegypter
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Barbar
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Neandertaler
 c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Franzmann
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Roemer
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Amerikaner
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Brite
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.HRRDN
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Deutscher
-c3538ca4aec17f8c791904ea10190416 Assembly-CSharp.dll:.Japaner
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Rotate

@@ -12,6 +12,8 @@ using UnityEngine;
 
 public class PopUpThings : MonoBehaviour {
 
+	//Made by Samuel
+
     public DungeonManager dungeonManager;
 
     public Indicator indicator;

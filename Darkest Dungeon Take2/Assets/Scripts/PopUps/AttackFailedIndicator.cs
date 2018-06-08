@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttackFailedIndicator : MonoBehaviour {
 
+	//Made by Samuel
+
     float startTime;
     float duration;
     private GUIStyle guiStyle = new GUIStyle();
@@ -13,24 +15,22 @@ public class AttackFailedIndicator : MonoBehaviour {
 
     public int yOffset = 50;
 
-    // Use this for initialization
-    void Start() {
-
-    }
-
-    // Update is called once per frame
     void Update() {
+		//wird nach Erstellung (Instantiate) nach Zeitspanne duration zerstört
         if (Time.time - startTime > duration) {
             Destroy(this.gameObject);
         }
     }
 
     public void PopUp(float duration) {
+		//duration wird übergeben
         startTime = Time.time;
         this.duration = duration;
     }
 
     void OnGUI() {
+		//Funktion zur Darstellung als GUI-Objekt
+		//hier: Text
         guiStyle.fontSize = 70;
         guiStyle.normal.textColor = Color.white;
         guiStyle.alignment = TextAnchor.MiddleCenter;

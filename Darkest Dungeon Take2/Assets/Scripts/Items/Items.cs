@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Items : MonoBehaviour {
 
+	//Made by Samuel
+
     public Dice dice;
 
 	public string itemName = "Banana";
